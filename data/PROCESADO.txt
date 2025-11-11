@@ -1,0 +1,55 @@
+Arquivos orixinais:
+- artists.csv
+- spotify_songs.csv
+
+=================================================
+
+Fase 1:
+
+- arquivo python: p1.py
+- arquivo entrada: artists.csv
+- arquivo saída: artists_v1.csv
+- cambios:
+	- eliminación nulos e ambiguos entre (last.fm e mb)
+	- en caso de nulos en columnas last.fm, escribir valores de mb
+
+-------------------------------------------------
+
+Fase 2:
+
+- arquivo python: p2.py
+- arquivo entrada: artists_v1.csv, spotify_songs.csv
+- arquivo saída: artists_v2.csv, songs_v1.csv
+- cambios:
+	- eliminación columnas: country_mb, tags_mb, ambiguous_artist, energy, key, loudness, mode, liveness, valence
+
+-------------------------------------------------
+
+Fase 3:
+ 
+- arquivo python: p3.py
+- arquivo entrada: artists_v2.csv
+- arquivo saída: artists_v3.csv
+- cambios:
+	- eliminación artistas con duplicados por nome
+
+-------------------------------------------------
+
+Fase 4:
+
+- arquivo python: p4.py
+- arquivo entrada: songs_v1.py
+- arquivo saída: songs_v2.py
+- cambios:
+	- creación de columna de colaboradores
+	- modificaciones manuales por fallos de formato
+
+-------------------------------------------------
+
+Fase 5:
+
+- arquivo python: p5.py
+- arquivo entrada: songs_v2.py
+- arquivo saída: songs_v3.py
+- cambios:
+	- eliminación de canción duplicadas (nome + artista)
