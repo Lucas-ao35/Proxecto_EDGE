@@ -1,0 +1,171 @@
+# =============================================
+# 📋 COMANDOS BÁSICOS DE GIT - LISTA COMPLETA
+# =============================================
+
+# 🔄 CONFIGURACIÓN INICIAL
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu-email@ejemplo.com"
+
+# 📁 INICIALIZAR REPOSITORIO
+git init
+git clone https://github.com/usuario/repositorio.git
+
+# 🔍 VER INFORMACIÓN
+git status
+git log
+git log --oneline
+git log --graph --oneline --all
+git branch
+git branch -a
+git remote -v
+git diff
+
+# 💾 AGREGAR Y GUARDAR CAMBIOS
+git add nombre_archivo.txt
+git add .
+git add --all
+git commit -m "Mensaje descriptivo"
+git commit -am "Mensaje"  # add + commit
+
+# 📤 SUBIR A GITHUB
+git push
+git push origin main
+git push origin master
+git push -u origin main  # primera vez
+git push --force-with-lease  # forzar con cuidado
+
+# 📥 DESCARGAR DE GITHUB
+git pull
+git pull origin main
+git fetch
+git fetch && git merge
+
+# 🆘 SOLUCIONAR ERROR COMÚN "main does not match"
+git branch  # Ver qué rama tienes
+git push origin master  # Si tienes master
+git branch -M main  # Cambiar master a main
+git push -u origin main  # Luego hacer push
+
+# 🔄 FLUJO DE TRABAJO DIARIO
+git status  # ← SIEMPRE usa esto primero
+git add .
+git commit -m "Descripción clara"
+git pull   # ← Actualizar antes de push
+git push
+
+# 📋 GESTIÓN DE ARCHIVOS
+git reset nombre_archivo.txt  # Quitar del staging
+git checkout -- nombre_archivo.txt  # Descartar cambios
+git rm nombre_archivo.txt  # Eliminar archivo
+git mv archivo_viejo.txt archivo_nuevo.txt  # Renombrar
+
+# 🔀 RAMAS (BRANCHES)
+git branch nueva-rama
+git checkout nombre-rama
+git checkout -b nueva-rama  # Crear y cambiar
+git branch -d nombre-rama  # Eliminar rama
+git merge nombre-rama  # Fusionar ramas
+
+# 🌐 GESTIÓN DE REMOTOS
+git remote add origin https://github.com/usuario/repo.git
+git remote remove origin
+git remote show origin
+
+# ⚠️ DESHACER COSAS
+git reset --soft HEAD~1  # Deshacer commit, guardar cambios
+git reset --hard HEAD~1  # Deshacer commit, eliminar cambios
+git commit --amend -m "Nuevo mensaje"  # Corregir último commit
+git revert HEAD  # Crear commit que deshace cambios
+
+# =============================================
+# 💡 TIPS ESENCIALES - COPIAR Y GUARDAR
+# =============================================
+
+# ✅ HAZ SIEMPRE:
+# 1. git status → Antes de cualquier cosa
+# 2. git pull → Antes de empezar a trabajar
+# 3. Commits con mensajes descriptivos
+# 4. git log --oneline → Ver historial rápido
+
+# ❌ NUNCA HAGAS:
+# 1. git push --force (sin --force-with-lease)
+# 2. Commits sin probar el código
+# 3. Mensajes de commit vagos como "fix" o "update"
+
+# 🚀 SECUENCIA MÁGICA DIARIA:
+git status
+git add .
+git commit -m "Descripción clara de los cambios"
+git pull
+git push
+
+# 🔧 SI ALGO SALE MAL:
+git status  # Ver qué pasó
+git log --oneline  # Ver historial
+git reflog  # Ver TODO el historial incluyendo cambios borrados
+
+# 📝 BUENOS MENSAJES DE COMMIT:
+# "feat: agregar login de usuario"
+# "fix: corregir error en cálculo de total"
+# "docs: actualizar instrucciones de instalación"
+# "style: mejorar formato del código"
+
+# =============================================
+# 🎯 COMANDOS PARA SITUACIONES ESPECÍFICAS
+# =============================================
+
+# 📁 Primer vez en proyecto existente:
+git clone https://github.com/usuario/repo.git
+cd repo
+git status
+
+# 🔄 Si el push falla por conflictos:
+git pull --rebase
+# Resolver conflictos manualmente, luego:
+git add .
+git rebase --continue
+git push
+
+# 🗑️ Limpiar archivos no rastreados:
+git clean -n  # Ver qué se eliminará
+git clean -f  # Eliminar archivos no rastreados
+
+# 🏷️ Trabajar con tags:
+git tag v1.0.0
+git push origin v1.0.0
+
+# =============================================
+# 📋 ARCHIVOS IMPORTANTES PARA CREAR
+# =============================================
+
+# .gitignore (evita subir archivos innecesarios)
+echo "node_modules/
+.env
+*.log
+.DS_Store" > .gitignore
+
+# README.md (documentación básica)
+echo "# Nombre del Proyecto
+
+## Descripción
+Breve descripción del proyecto.
+
+## Instalación
+\`\`\`bash
+npm install
+\`\`\`
+
+## Uso
+Explicación de cómo usar el proyecto." > README.md
+
+# =============================================
+# 🚀 RESUMEN ÚLTIMO RECURSO
+# =============================================
+
+# Si nada funciona:
+git status
+git log --oneline
+git reflog
+
+# Guarda esta lista como 'comandos-git.txt' en tu escritorio
+# Y úsala como referencia rápida
